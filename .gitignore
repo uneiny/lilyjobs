@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+
+# Streamlit local state and secrets
+.streamlit/secrets.toml
+
+# Runtime outputs
+logs/
+data/output/
+*.log
+*.xlsx
+*.xls
+*.csv
+
+# Local/editor files
+.env
+.env.*
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local backup files
+* - 복사본.py
+*_copy.py
+*.bak
+*.tmp

@@ -1,0 +1,504 @@
+[
+  {
+    "name": "나라일터",
+    "enabled": true,
+    "type": "dynamic",
+    "collector": "narailter",
+    "url": "https://www.gojobs.go.kr",
+    "list_url": "https://www.gojobs.go.kr/apmList.do",
+    "wait_selector": "body",
+    "render_wait_ms": 2500,
+    "region": "",
+    "dynamic_hint": true,
+    "keywords": ["채용", "모집", "임용", "공무직", "기간제", "근로자"],
+    "table": {
+      "min_cells": 4,
+      "deadline_from_row": true
+    }
+  },
+  {
+    "name": "클린아이잡플러스",
+    "enabled": true,
+    "type": "dynamic",
+    "collector": "cleaneye_jobplus",
+    "url": "https://job.cleaneye.go.kr",
+    "list_url": "https://job.cleaneye.go.kr/user/ypRecruitment.do",
+    "wait_selector": "body",
+    "render_wait_ms": 2500,
+    "region": "",
+    "dynamic_hint": true,
+    "keywords": ["채용", "모집", "공고", "임용", "기간제", "근로자"],
+    "table": {
+      "min_cells": 4,
+      "deadline_from_row": true
+    }
+  },
+  {
+    "name": "잡알리오",
+    "enabled": true,
+    "type": "dynamic",
+    "collector": "job_alio",
+    "url": "https://www.alio.go.kr",
+    "list_url": "https://www.alio.go.kr/mobile/information/informationRecruitList.do",
+    "wait_selector": "body",
+    "render_wait_ms": 3000,
+    "region": "",
+    "dynamic_hint": true,
+    "keywords": ["채용", "모집", "공고", "인턴"],
+    "table": {
+      "min_cells": 4,
+      "deadline_from_row": true
+    }
+  },
+  {
+    "name": "잡아바",
+    "enabled": true,
+    "type": "dynamic",
+    "collector": "jobaba",
+    "url": "https://www.jobaba.net",
+    "list_url": "https://job.gg.go.kr/pblcEmpmn/list.do",
+    "wait_selector": "body",
+    "render_wait_ms": 3000,
+    "region": "경기"
+  },
+  {
+    "name": "광명시청 > 고시공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.gm.go.kr",
+    "list_url": "https://www.gm.go.kr/pt/user/nftcBbs/BD_selectNftcBbsList.do?q_nftcBbsCode=1001",
+    "detail_url_template": "https://www.gm.go.kr/pt/user/nftcBbs/BD_selectNftcBbsDetail.do?q_nftcBbsCode=1001&q_nftcBbsMgtno={id}",
+    "region": "광명",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임용"],
+    "table": {
+      "min_cells": 5,
+      "title_col": 2,
+      "department_col": 3,
+      "posted_col": 4
+    },
+    "pagination": {
+      "page_param": "q_currPage",
+      "max_pages": 10
+    }
+  },
+  {
+    "name": "광명시청 > 시험/채용공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.gm.go.kr",
+    "list_url": "https://www.gm.go.kr/pt/user/bbs/BD_selectBbsList.do?q_bbsCode=2034&q_clCode=1",
+    "region": "광명",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임용", "공무직", "합격자", "일자리"],
+    "table": {
+      "min_cells": 5,
+      "title_col": 1,
+      "department_col": 2,
+      "posted_col": 3
+    },
+    "pagination": {
+      "page_param": "q_currPage",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "구로구청 > 채용공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.guro.go.kr",
+    "list_url": "https://www.guro.go.kr/www/selectBbsNttList.do?bbsNo=664&key=1792",
+    "region": "구로",
+    "keywords": ["채용", "모집", "기간제", "근로자", "공무직", "합격자"],
+    "table": {
+      "min_cells": 5,
+      "title_col": 1,
+      "department_col": 2,
+      "posted_col": 3
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    }
+  },
+  {
+    "name": "구로구청 > 고시공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.guro.go.kr",
+    "list_url": "https://www.guro.go.kr/www/selectBbsNttList.do?bbsNo=663&key=1791",
+    "region": "구로",
+    "keywords": ["채용", "모집", "기간제", "근로자", "공무직", "합격자"],
+    "table": {
+      "min_cells": 6,
+      "title_col": 3,
+      "department_col": 4,
+      "posted_col": 5
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "금천구청 > 채용정보알림방",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.geumcheon.go.kr",
+    "list_url": "https://www.geumcheon.go.kr/portal/empmnInfoNtcnRoomList.do?key=492",
+    "region": "금천",
+    "keywords": ["채용", "모집", "기간제", "근로자", "공무원", "공공근로"],
+    "table": {
+      "min_cells": 7,
+      "title_col": 1,
+      "department_col": 6,
+      "deadline_col": 5,
+      "deadline_from_row": true
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    }
+  },
+  {
+    "name": "금천구청 > 고시공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.geumcheon.go.kr",
+    "list_url": "https://www.geumcheon.go.kr/portal/tblSeolGosiDetailList.do?key=294&rep=1",
+    "region": "금천",
+    "keywords": ["채용", "모집", "기간제", "근로자", "공무원", "공무직", "공공근로", "합격자"],
+    "table": {
+      "min_cells": 6,
+      "title_col": 2,
+      "department_col": 3,
+      "posted_col": 4,
+      "deadline_col": 5
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "강북구청 > 채용공고(공공일자리)",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.gangbuk.go.kr",
+    "list_url": "https://child.gangbuk.go.kr/portal/bbs/B0000154/list.do?menuNo=200510",
+    "region": "강북",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "합격자"],
+    "table": {
+      "min_cells": 6,
+      "title_col": 1,
+      "department_col": 2,
+      "posted_col": 5
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    }
+  },
+  {
+    "name": "강북구청 > 고시공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.gangbuk.go.kr",
+    "list_url": "https://child.gangbuk.go.kr/portal/bbs/B0000245/list.do?menuNo=200082",
+    "region": "강북",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "공무직", "합격자"],
+    "table": {
+      "min_cells": 7,
+      "title_col": 2,
+      "department_col": 3,
+      "posted_col": 4,
+      "deadline_col": 5
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "노원구청 > 채용공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.nowon.kr",
+    "list_url": "https://www.nowon.kr/www/user/bbs/BD_selectBbsList.do?q_bbsCode=1003&q_clCode=0&q_estnColumn7=Y",
+    "detail_url_template": "https://www.nowon.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1003&q_bbscttSn={id}&q_estnColumn7=Y",
+    "region": "노원",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "공무직", "합격자"],
+    "table": {
+      "min_cells": 5,
+      "title_col": 1,
+      "department_col": 2,
+      "posted_col": 3
+    },
+    "pagination": {
+      "page_param": "q_currPage",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "노원구청 > 고시공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.nowon.kr",
+    "list_url": "https://www.nowon.kr/www/user/bbs/BD_selectBbsList.do?q_bbsCode=1003&q_clCode=1&q_estnColumn7=N",
+    "detail_url_template": "https://www.nowon.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1003&q_bbscttSn={id}&q_estnColumn7=N",
+    "region": "노원",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "공무직", "합격자"],
+    "table": {
+      "min_cells": 5,
+      "title_col": 1,
+      "department_col": 2,
+      "posted_col": 3
+    },
+    "pagination": {
+      "page_param": "q_currPage",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "도봉구청 > 보건소 공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://health.dobong.go.kr",
+    "list_url": "https://health.dobong.go.kr/bbs.asp?code=10005005",
+    "region": "도봉",
+    "keywords": ["채용", "모집", "기간제", "근로자", "공무직", "합격자"],
+    "table": {
+      "min_cells": 4,
+      "deadline_from_row": true
+    },
+    "pagination": {
+      "page_param": "intPage",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "도봉구청 > 일자리/취업지원센터 채용공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.dobong.go.kr",
+    "list_url": "https://www.dobong.go.kr/bbs.asp?code=10009708",
+    "region": "도봉",
+    "keywords": ["채용", "모집", "기간제", "근로자", "공무직", "합격자"],
+    "table": {
+      "min_cells": 4,
+      "deadline_from_row": true
+    },
+    "pagination": {
+      "page_param": "intPage",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "성북구청 > 채용공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.sb.go.kr",
+    "list_url": "https://www.sb.go.kr/www/selectEminwonList.do?key=6483&searchCnd=employment",
+    "region": "성북",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "공무직", "합격자"],
+    "table": {
+      "min_cells": 5,
+      "title_col": 2,
+      "department_col": 3,
+      "posted_col": 4
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "성북구청 > 고시공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.sb.go.kr",
+    "list_url": "https://www.sb.go.kr/www/selectEminwonList.do?key=6920",
+    "region": "성북",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "공무직", "합격자"],
+    "table": {
+      "min_cells": 5,
+      "title_col": 2,
+      "department_col": 3,
+      "posted_col": 4
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "성북구청 > 유관기관 채용공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.sb.go.kr",
+    "list_url": "https://www.sb.go.kr/www/selectBbsNttList.do?bbsNo=43&key=6352",
+    "region": "성북",
+    "keywords": ["채용", "모집", "기간제", "근로자", "공무직", "합격자"],
+    "table": {
+      "min_cells": 5,
+      "title_col": 1,
+      "department_col": 2,
+      "posted_col": 3
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "시흥시청 > 일자리/채용정보",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.siheung.go.kr",
+    "list_url": "http://www.siheung.go.kr/main/jobInfoView2/list.do?mId=0401070000",
+    "region": "시흥",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "공무직", "합격자"],
+    "table": {
+      "min_cells": 6,
+      "title_col": 2,
+      "department_col": 3,
+      "deadline_col": 5
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "시흥시청 > 고시공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.siheung.go.kr",
+    "list_url": "http://www.siheung.go.kr/main/saeol/gosi/list.do?mId=0401040100",
+    "region": "시흥",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "공무직", "합격자"],
+    "table": {
+      "min_cells": 6,
+      "title_col": 2,
+      "department_col": 3,
+      "posted_col": 4
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "부천시청 > 채용시험",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.bucheon.go.kr",
+    "list_url": "https://www.bucheon.go.kr/site/program/board/basicboard/list?boardid=1134981&boardtypeid=26756&encid=9OMFjSwlIpbUBSBFf+hXJA%3D%3D&menuid=148002004001&pagesize=10",
+    "region": "부천",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "공무직", "합격자"],
+    "table": {
+      "min_cells": 6,
+      "title_col": 1,
+      "department_col": 2,
+      "posted_col": 3
+    },
+    "pagination": {
+      "page_param": "currentpage",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "부천시청 > 고시공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.bucheon.go.kr",
+    "list_url": "https://www.bucheon.go.kr/site/program/gosi/list?menuid=148002003001",
+    "region": "부천",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "공무직", "합격자"],
+    "table": {
+      "min_cells": 5,
+      "deadline_from_row": true
+    },
+    "pagination": {
+      "page_param": "currentpage",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "안양시청 > 채용공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.anyang.go.kr",
+    "list_url": "https://www.anyang.go.kr/main/emwsWebList.do?key=4102&pageIndex=1&pageUnit=10&searchCnd=all&searchGosiSe=05&searchKrwd=",
+    "legacy_ssl": true,
+    "region": "안양",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "공무직", "합격자"],
+    "table": {
+      "min_cells": 5,
+      "title_col": 1,
+      "department_col": 2,
+      "posted_col": 3,
+      "deadline_from_row": true
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  },
+  {
+    "name": "안양시청 > 공공기관채용공고",
+    "enabled": true,
+    "type": "static",
+    "collector": "local_gov_board",
+    "url": "https://www.anyang.go.kr",
+    "list_url": "https://www.anyang.go.kr/main/selectBbsNttList.do?bbsNo=64&integrDeptCode=&key=1771&pageIndex=1&searchCnd=all&searchCtgry=&searchKrwd=",
+    "legacy_ssl": true,
+    "region": "안양",
+    "keywords": ["채용", "모집", "기간제", "근로자", "임기제", "공무직", "합격자"],
+    "table": {
+      "min_cells": 5,
+      "title_col": 1,
+      "department_col": 2,
+      "posted_col": 3
+    },
+    "pagination": {
+      "page_param": "pageIndex",
+      "max_pages": 10
+    },
+    "allow_fallback": true
+  }
+]

@@ -37,5 +37,17 @@ Write-Host "Installing Playwright browser for local fallback collection..."
 & ".venv\Scripts\python.exe" -m playwright install chromium
 
 Write-Host "Starting Lily Jobs locally..."
-Write-Host "Open http://localhost:8501 in your browser if it does not open automatically."
-& ".venv\Scripts\python.exe" -m streamlit run app.py --server.port 8501
+if (Get-NetTCPConnection -LocalPort 8501 -State Listen -ErrorAction SilentlyContinue) {
+    Write-Host "Lily Jobs already appears to be running on http://localhost:8501"
+    Start-Process "http://localhost:8501"
+    Read-Host "Press Enter to exit"
+    exit 0
+}
+
+Write-Host "Opening http://localhost:8501 in your browser..."
+Start-Process powershell -WindowStyle Hidden -ArgumentList @(
+    "-NoProfile",
+    "-Command",
+    "Start-Sleep -Seconds 3; Start-Process 'http://localhost:8501'"
+)
+& ".venv\Scripts\python.exe" -m streamlit run app.py --server.port 8501 --server.headless false

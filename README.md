@@ -36,10 +36,29 @@
 
 ## 실행 방법
 
+### 로컬 PC에서 바로 실행
+
+Windows에서는 아래 파일 중 하나를 실행하면 가상환경 생성, 패키지 설치, Playwright 브라우저 설치, Streamlit 실행을 자동으로 진행합니다.
+
+```text
+run_local.bat
+```
+
+PowerShell을 선호하면 아래 명령을 사용합니다.
+
+```powershell
+.\run_local.ps1
+```
+
+실행 후 브라우저에서 `http://localhost:8501`로 접속합니다. Streamlit Community Cloud에서 일부 사이트 수집이 실패할 때는 이 로컬 실행 방식을 사용하세요.
+
+### 수동 실행
+
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+python -m playwright install chromium
 streamlit run app.py
 ```
 
@@ -57,7 +76,21 @@ source .venv/bin/activate
 4. Main file path에 `app.py`를 입력합니다.
 5. 배포를 실행합니다.
 
-현재 활성 수집기는 `requests`, `beautifulsoup4` 기반입니다. Playwright 또는 Selenium 브라우저 드라이버는 배포 필수가 아니므로 별도의 `packages.txt`나 Playwright install script가 필요하지 않습니다.
+일부 공공기관 사이트는 Streamlit Community Cloud 서버 접속을 차단하거나 연결을 끊을 수 있습니다. 이 경우 앱 자체 문제라기보다 수집 대상 사이트의 접속 정책 문제일 수 있으므로 로컬 PC에서 실행하는 방식을 권장합니다.
+
+## 로컬 엑셀 수집
+
+Streamlit 화면 없이 명령줄에서 바로 엑셀 파일을 만들 수도 있습니다.
+
+```bash
+python collect_local.py --max-items 20 --output data/output/lilyjobs_results.xlsx
+```
+
+특정 수집기만 실행하려면 collector id를 지정합니다.
+
+```bash
+python collect_local.py --sites narailter job_alio --max-items 10
+```
 
 ## 설정 파일
 

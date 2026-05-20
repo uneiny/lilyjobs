@@ -95,12 +95,25 @@ def collect_jobs_with_logs(
             log["count"] = len(normalized_rows)
         except Exception as error:
             logging.exception("%s 수집 실패", source)
-            message = friendly_error_message(error)
+            message = local_run_hint(collector_name or "", friendly_error_message(error))
             all_rows.append(make_error_row(source, message, site.get("region", "")))
             log.update(status="error", message=message)
         logs.append(log)
 
     return deduplicate_rows(all_rows), logs
+
+
+def local_run_hint(collector_name: str, message: str) -> str:
+    if collector_name not in {"narailter", "job_alio"}:
+        return message
+
+    if not any(keyword in message for keyword in ("접속 실패", "접속 지연")):
+        return message
+
+    return (
+        f"{message} Streamlit Cloud 등 서버 환경에서는 접속이 제한될 수 있습니다. "
+        "로컬 버전(run_local.bat)으로 실행해 주세요."
+    )
 
 
 def deduplicate_rows(rows: list[dict]) -> list[dict]:
